@@ -16,7 +16,7 @@ public interface UserMapper {
 
     int verify(String account,String password);
 
-    String getIdentity(String account);
+    List<UserInfo> getUserInformation(String account,String password);
 
-
+    List<PetInfo> getAdoptedPetInformation(String account,String password);
 }

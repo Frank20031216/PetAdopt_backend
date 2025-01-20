@@ -35,10 +35,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String getIdentity(String account)
+    public List<UserInfo> getUserInformation(String account,String password)
+    {return userMapper.getUserInformation(account,password);};
+
+    @Override
+    public List<PetInfo> getAdoptedPetInformation(String account,String password)
     {
-        return userMapper.getIdentity(account);
+        return userMapper.getAdoptedPetInformation(account,password);
     }
-
-
 }

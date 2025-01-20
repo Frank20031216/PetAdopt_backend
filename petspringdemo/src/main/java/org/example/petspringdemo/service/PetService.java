@@ -1,6 +1,8 @@
 package org.example.petspringdemo.service;
 
+import org.apache.ibatis.annotations.Param;
 import org.example.petspringdemo.entity.PetInfo;
+import org.example.petspringdemo.entity.PetUserDTO;
 
 import java.util.List;
 
@@ -18,8 +20,8 @@ public interface PetService {
 
     void updateAll(PetInfo pet);
 
+    List<PetUserDTO> selectUnhandledPet();
 
-
-
+    PetInfo selectPetById(int petId);
 
 }

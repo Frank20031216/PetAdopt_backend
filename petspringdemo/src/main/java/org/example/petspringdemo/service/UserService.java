@@ -12,7 +12,7 @@ public interface UserService {
 
     int verify(String userName,String password);
 
-    String getIdentity(String account);
+    List<UserInfo> getUserInformation(String account,String password);
 
-
+    List<PetInfo> getAdoptedPetInformation(String account,String password);
 }

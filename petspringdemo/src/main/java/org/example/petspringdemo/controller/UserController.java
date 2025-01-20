@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/user")
 @CrossOrigin(origins = "*")
@@ -33,12 +35,13 @@ public class UserController {
         return userService.verify(account,password);
     }
 
-
-    @RequestMapping("/getIdentity/*")
-    public String getIdentity(String account)
-    {
-        return userService.getIdentity(account);
+    @RequestMapping("/getUserInformation/*")
+    public List<UserInfo> getUserInformation(String account, String password) {
+        return userService.getUserInformation(account, password);
     }
 
-
+    @RequestMapping("/getAdoptedPetInformation/*")
+    public List<PetInfo> getAdoptedPetInformation(String account, String password) {
+        return userService.getAdoptedPetInformation(account, password);
+    }
 }

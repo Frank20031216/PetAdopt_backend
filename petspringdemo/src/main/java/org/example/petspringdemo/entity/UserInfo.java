@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 public class UserInfo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;

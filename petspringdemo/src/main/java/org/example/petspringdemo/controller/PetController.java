@@ -1,5 +1,6 @@
 package org.example.petspringdemo.controller;
 import org.example.petspringdemo.entity.PetInfo;
+import org.example.petspringdemo.entity.PetUserDTO;
 import org.example.petspringdemo.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -51,13 +52,11 @@ public class PetController {
     }
 
 
+    @RequestMapping("/selectUnhandledPet")
+    public List<PetUserDTO> selectUnhandledPet(){return petService.selectUnhandledPet();}
 
 
-
-
-
-
-
-
+    @RequestMapping("/selectPetById/*")
+    public PetInfo selectPetById(int petId){return petService.selectPetById(petId);}
 
 }
